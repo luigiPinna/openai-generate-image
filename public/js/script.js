@@ -5,7 +5,7 @@ function generateImage(e){
     let keyword = document.querySelector('#promt').value
     let size = document.querySelector('#size').value
 
-    if(prompt === ""){
+    if(keyword === ""){
         alert("Please add a description")
         return
     }
