@@ -1,31 +1,32 @@
 document.getElementById('image-form').onsubmit = generateImage
 
 function generateImage(e){
-    e.preventDefault()
-    let keyword = document.querySelector('#promt').value
+    e.preventDefault();
+    let prompt = document.querySelector('.prompt')
     let size = document.querySelector('#size').value
 
-    if(keyword === ""){
+    if(prompt === ''){
         alert("Please add a description")
-        return
+        return;
     }
 
-    generateImageRequest(keyword, size)
+    generateImageRequest(prompt, size);
 }
 
-async function generateImageRequest(keyword, size){
+async function generateImageRequest(prompt, size){
     try {
-        const response = await fetch('/openai/generate-image', {
+        const response = await fetch('/openai/generateimage', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                keyword,
+                prompt,
                 size
             })
         })
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
+
