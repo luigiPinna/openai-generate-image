@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//Set static folder
+// Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/openapi',require('./routes/openaiRoutes'))
