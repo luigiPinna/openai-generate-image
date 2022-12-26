@@ -1,16 +1,29 @@
-.spin{
-	width: 200px;
-	height: 200px;
-	border: 5px solid;
-	margin: 200px auto;
-	border-radius: 50%;
-	border-color: #f1c40f transparent;
-	animation: spin 2s linear infinite;
-
+.spinner {
+    width: 25px;
+    height: 25px;
+    margin: 20px auto;
+    border: 4px solid rgba(0, 0, 0, .1);
+    border-left: 4px solid #000;
+    border-right: 4px solid #000;
+    animation: spinner 1s linear infinite forwards;
+	display: none;
+	overflow: show;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+         -o-border-radius: 50%;
+        -ms-border-radius: 50%;
+            border-radius: 50%
+}
+.show {
+	display: block;
 }
 
-@keyframes spin{
-	100%{
-		transform: rotate(360deg);
-	}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg)
+    }
+    
+    100% {
+        transform: rotate(360deg)
+    }
 }

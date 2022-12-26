@@ -23,7 +23,6 @@ document.querySelector('#image-form').addEventListener('submit', generateImage);
 async function generateImageRequest(prompt, size){
     try {
         showSpinner();
-
         const response = await fetch('/openai/generateimage', {
             method: 'POST',
             headers: {
